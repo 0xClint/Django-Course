@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}
+My blog
+{% endblock %}
+
+{% block body_content %}
+<h2>Welcome to my Blog !</h2>
+
+<section id="welcome">
+    <header>
+        <img src="" alt="">
+        <h2>CLINT'S BLOG</h2>
+        <img src='{% static "images/1.jpg" %}' width="200px" alt="clintphoto">
+    </header>
+</section>
+
+<section>
+    <h2>Latest Posts</h2>
+    <ul>
+        {% for post in posts %}
+        {% include "blog/includes/post.html" %}
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
